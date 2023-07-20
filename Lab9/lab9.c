@@ -1,7 +1,8 @@
 /* Gilbert Traczyk & Moosa Azfar
 *
-* This program takes the input from an ultrasonic sensor and displays it on a seven segment display by transmitting the decoded reading over UART to another microcontroller.
-* The reading range of 2-400 is divided into 5 ranges (2-50, 50-100, 100-200, 200-300, 300-400); each range corresponds to a different pitch on the buzzer. As distance decreases, pitch increases.
+* This program is designed to be run on two microcontrollers simultaneously; the first microcontroller takes in raw measurements from an ultrasonic sensor and transmits those measurements over UART
+* to a second microcontroller. The transmitted values are converted from raw ADC to scaled distance measurements, and a buzzer is sounded at different pitches depending on what the measured distance values are.
+* The second microcontroller is in charge of solely reciving the distance values and displaying them on a quad seven-segment display.
 */
 
 #include <msp430.h>
